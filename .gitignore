@@ -1,0 +1,33 @@
+*~
+
+# Build results
+bin/
+bin_x64/
+build-*/
+build/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleaseWithDebugInfo/
+GeneratedFiles/
+Intermediate\ Files/
+temp/
+temp_x64/
+
+# User-specific files
+*.suo
+*.user
+
+# Visual C++ cache files
+*.opensdf
+*.sdf
+*.ncb
+*.VC.db
+*.VC.opendb
+*.aps
+
+
+*.kdev4/
+.vscode/
+.idea/
+.cache/
+
