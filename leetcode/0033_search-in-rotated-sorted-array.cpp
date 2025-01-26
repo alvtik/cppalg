@@ -4,25 +4,37 @@ class Solution {
 public:
 	int search(std::vector<int>& nums, int target)
 	{
-		int n = nums.size();
-		int left = 0, right = n - 1;
+		int l = 0, r = nums.size() - 1;
 
-		while (left < right)
+		while (l < r)
 		{
-			int mid = (left + right) >> 1;
-			if (nums[0] <= nums[mid])
+			int mid = (l + r) >> 1;
+
+			if (nums[mid] > nums[r])
 			{
-				if (nums[0] <= target && target <= nums[mid])
-					right = mid;
+				if (nums[l] <= target && target <= nums[mid])
+				{
+					r = mid;
+				}
 				else
-					left = mid + 1;
+				{
+					l = mid + 1;
+				}
+			}
+			else if (nums[mid] < nums[r])
+			{
+				if (nums[mid] < target && target <= nums[r])
+				{
+					l = mid + 1;
+				}
+				else
+				{
+					r = mid;
+				}
 			}
 			else
 			{
-				if (nums[mid] < target && target <= nums[n - 1])
-					left = mid + 1;
-				else
-					right = mid;
+				--r;
 			}
 		}
 
