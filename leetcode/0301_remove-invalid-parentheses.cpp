@@ -67,7 +67,7 @@ private:
 			if(std::isalpha(ch))
 				continue;
 
-			if (ch == '(' || ch == '{' || ch == '[')
+			if (ch == '(')
 			{
 				st.push(ch);
 				continue;
@@ -79,10 +79,6 @@ private:
 			char ch_s = st.top();
 
 			if(ch_s != '(' && ch == ')')
-				return false;
-			else if(ch_s != '{' && ch == '}')
-				return false;
-			else if(ch_s != '[' && ch == ']')
 				return false;
 
 			st.pop();
