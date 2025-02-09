@@ -4,19 +4,19 @@
 class Solution
 {
 public:
-	int maxProfit(std::vector<int>& prices, int fee)
-	{
-		int nCurProfit = 0, nAccum = -prices[0];
+    int maxProfit(std::vector<int>& prices, int fee)
+    {
+        int nProfit = 0, nAcumIfBuy = -prices[0];
 
-		for (int i = 1; i < prices.size(); ++i)
-		{
-			int g0 = std::max(nCurProfit, nAccum + prices[i] - fee);
-			nAccum = std::max(nAccum, nCurProfit - prices[i]);
-			nCurProfit = g0;
-		}
+        for (int i = 1; i < prices.size(); ++i)
+        {
+            int g0 = std::max(nProfit, nAcumIfBuy + prices[i] - fee);
+            nAcumIfBuy = std::max(nAcumIfBuy, nProfit - prices[i]);
+            nProfit = g0;
+        }
 
-		return nCurProfit;
-	}
+        return nProfit;
+    }
 };
 
 //int main()
